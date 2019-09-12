@@ -1,10 +1,13 @@
 package com.zhe.coolweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
+import com.google.gson.Gson;
 import com.zhe.coolweather.db.City;
 import com.zhe.coolweather.db.County;
 import com.zhe.coolweather.db.Province;
+import com.zhe.coolweather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -68,6 +71,19 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    //天气实体类
+    public static Weather handleWeatherResonpse(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray  = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return  new Gson().fromJson(weatherContent, Weather.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return  null;
     }
 }
 

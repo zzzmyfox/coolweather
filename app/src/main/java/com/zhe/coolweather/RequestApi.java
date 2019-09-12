@@ -1,5 +1,8 @@
 package com.zhe.coolweather;
 
 public interface RequestApi {
-    String provinceUrl = "http://guolin.tech/api/china/";
+    String baseUrl = "http://guolin.tech/api/";
+
+    String provinceUrl = baseUrl + "china/";
+    String bingPicUrl = baseUrl + "bing_pic";
 }

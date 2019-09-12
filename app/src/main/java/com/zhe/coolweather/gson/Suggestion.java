@@ -12,17 +12,17 @@ public class Suggestion {
     public Sport sport;
 
 
-    class Comfort {
+    public class Comfort {
         @SerializedName("txt")
         public String info;
     }
 
-    class CarWash {
+    public class CarWash {
         @SerializedName("txt")
         public String info;
     }
 
-    class Sport {
+    public class Sport {
         @SerializedName("txt")
         public String info;
     }

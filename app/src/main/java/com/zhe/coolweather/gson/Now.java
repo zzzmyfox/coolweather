@@ -3,7 +3,7 @@ package com.zhe.coolweather.gson;
 import com.google.gson.annotations.SerializedName;
 
 public class Now {
-    @SerializedName("tmo")
+    @SerializedName("tmp")
     public String temperature;
 
     @SerializedName("cond")
